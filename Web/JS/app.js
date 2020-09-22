@@ -1,3 +1,10 @@
+Vue.component('app-footer', {
+    props: ['foot'],
+    template: '<a :href="foot.links" :title="foot.title"><i :class="foot.icon"></i></a>'
+})
+
+
+
 let dataOfTheGame = {
     symbolPlayer: "X",
     symbolComputer: "O",
@@ -171,9 +178,11 @@ let game = new Vue({
 let dataOfTheFooter = new Vue({
     el: 'footer',
     data: {
-        github: 'Venez voir mon Github !',
-        linkedIn: 'Contactez moi sur LinkedIn !',
-        portfolio: 'Venez sur mon portfolio !',
-        vueJS: 'Application codée avec Vue.JS !'
+        links: [
+            { links:'https://github.com/peluche1275', title: 'Venez voir mon Github !',icon: 'fab fa-github' },
+            { links:'https://www.linkedin.com/in/nathanaltomare/', title: 'Contactez moi sur LinkedIn !',icon: 'fab fa-linkedin' },
+            { links:'http://www.nathanhtml.fr', title: 'Venez sur mon portfolio !',icon: 'fas fa-globe' },
+            { links:'https://vuejs.org/', title: 'Application codée avec Vue.JS !!',icon: 'fab fa-vuejs' }
+          ]
     }
 })

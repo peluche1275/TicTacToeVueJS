@@ -11,6 +11,7 @@
     <script src="https://kit.fontawesome.com/1c9c468cda.js" crossorigin="anonymous"></script>
     <script src="./js/vue.min.js"></script>
     <link rel="stylesheet" href="CSS/style.css" />
+    <link rel="icon" href="favicon.ico" />
     <title>Tic Tac Toe</title>
 </head>
 
@@ -39,13 +40,10 @@
         <p id="message">{{ message }}</p>
     </div>
 
-
     <footer>
-        <a href="https://github.com/peluche1275" :title="github"><i class="fab fa-github"></i></a>
-        <a href="https://www.linkedin.com/in/nathanaltomare/"><i class="fab fa-linkedin" :title="linkedIn"></i></a>
-        <a href="http://www.nathanhtml.fr"><i class="fas fa-globe" :title="portfolio"></i></a>
-        <a href="https://vuejs.org/"><i class="fab fa-vuejs" :title="vueJS"></i></a>
+        <app-footer v-for="item in links" v-bind:foot="item"></app-footer>
     </footer>
+
     <script src="./JS/app.js"></script>
 </body>
 
