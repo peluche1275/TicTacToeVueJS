@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="Fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tic Tac Toe">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Montserrat+Alternates&family=Quicksand:wght@600&display=swap"
+        rel="stylesheet">
+    <script src="https://kit.fontawesome.com/1c9c468cda.js" crossorigin="anonymous"></script>
+    <script src="./js/vue.min.js"></script>
+    <link rel="stylesheet" href="CSS/style.css" />
+    <title>Tic Tac Toe</title>
+</head>
+
+<body>
+    <div id="game">
+        <h1><a href="tictactoe.nathanhtml.fr"> Tic Tac Toe </a></h1>
+        <div id="main">
+            <div class="row">
+                <div class="box" v-on:click="playerTouchGridBox"></div>
+                <div class="box vertical" v-on:click="playerTouchGridBox"></div>
+                <div class="box" v-on:click="playerTouchGridBox"></div>
+            </div>
+            <div class="row">
+                <div class="box horizontal" v-on:click="playerTouchGridBox"></div>
+                <div class="box horizontal vertical" v-on:click="playerTouchGridBox"></div>
+                <div class="box horizontal" v-on:click="playerTouchGridBox"></div>
+            </div>
+            <div class="row">
+                <div class="box" v-on:click="playerTouchGridBox"></div>
+                <div class="box vertical" v-on:click="playerTouchGridBox"></div>
+                <div class="box" v-on:click="playerTouchGridBox"></div>
+            </div>
+
+        </div>
+        <button v-on:click="restart">Relancer</button>
+        <p id="message">{{ message }}</p>
+    </div>
+
+
+    <footer>
+        <a href="https://github.com/peluche1275" :title="github"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/nathanaltomare/"><i class="fab fa-linkedin" :title="linkedIn"></i></a>
+        <a href="http://www.nathanhtml.fr"><i class="fas fa-globe" :title="portfolio"></i></a>
+        <a href="https://vuejs.org/"><i class="fab fa-vuejs" :title="vueJS"></i></a>
+    </footer>
+    <script src="./JS/app.js"></script>
+</body>
+
+</html>
