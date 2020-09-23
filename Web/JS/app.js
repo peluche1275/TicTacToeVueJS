@@ -3,6 +3,16 @@ Vue.component('app-footer', {
     template: '<a :href="foot.links" :title="foot.title"><i :class="foot.icon"></i></a>'
 })
 
+Vue.component('row', {
+    props: ['rowdata'],
+    methods: {
+        childPlayerTouchGridBox: function (e) {
+            this.$parent.playerTouchGridBox(e);
+        }
+    },
+    template: '<div :class="rowdata.box" v-on:click="childPlayerTouchGridBox"></div>'
+})
+
 
 
 let dataOfTheGame = {
@@ -11,7 +21,13 @@ let dataOfTheGame = {
     possiblities: [0, 1, 2, 3, 4, 5, 6, 7, 8, 0, 3, 6, 1, 4, 7, 2, 5, 8, 0, 4, 8, 2, 4, 6],
     message: "",
     gridBoxes: document.getElementsByClassName("box"),
-    gameOver: false
+    gameOver: false,
+    siderow: [{ box: 'box' },
+    { box: 'box vertical' },
+    { box: 'box' }],
+    middlerow: [{ box: 'box horizontal' },
+    { box: 'box horizontal vertical' },
+    { box: 'box horizontal' }]
 }
 
 let game = new Vue({
@@ -179,10 +195,10 @@ let dataOfTheFooter = new Vue({
     el: 'footer',
     data: {
         links: [
-            { links:'https://github.com/peluche1275', title: 'Venez voir mon Github !',icon: 'fab fa-github' },
-            { links:'https://www.linkedin.com/in/nathanaltomare/', title: 'Contactez moi sur LinkedIn !',icon: 'fab fa-linkedin' },
-            { links:'http://www.nathanhtml.fr', title: 'Venez sur mon portfolio !',icon: 'fas fa-globe' },
-            { links:'https://vuejs.org/', title: 'Application codée avec Vue.JS !!',icon: 'fab fa-vuejs' }
-          ]
+            { links: 'https://github.com/peluche1275', title: 'Venez voir mon Github !', icon: 'fab fa-github' },
+            { links: 'https://www.linkedin.com/in/nathanaltomare/', title: 'Contactez moi sur LinkedIn !', icon: 'fab fa-linkedin' },
+            { links: 'http://www.nathanhtml.fr', title: 'Venez sur mon portfolio !', icon: 'fas fa-globe' },
+            { links: 'https://vuejs.org/', title: 'Application codée avec Vue.JS !!', icon: 'fab fa-vuejs' }
+        ]
     }
 })

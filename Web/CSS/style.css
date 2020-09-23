@@ -93,12 +93,12 @@ a:hover, h1:hover, i:hover,button:hover{
 }
 
 footer{
-	
 	margin: 0 auto;
 	font-size: 48px;
 }
 
 i{
+	margin: 8px;
 	margin-top: 30px;
 	color: white;
 }

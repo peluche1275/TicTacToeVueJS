@@ -17,22 +17,18 @@
 
 <body>
     <div id="game">
+        
         <h1><a href="tictactoe.nathanhtml.fr"> Tic Tac Toe </a></h1>
+
         <div id="main">
             <div class="row">
-                <div class="box" v-on:click="playerTouchGridBox"></div>
-                <div class="box vertical" v-on:click="playerTouchGridBox"></div>
-                <div class="box" v-on:click="playerTouchGridBox"></div>
+                <row v-for="item in siderow" v-bind:rowdata="item"></row>
             </div>
             <div class="row">
-                <div class="box horizontal" v-on:click="playerTouchGridBox"></div>
-                <div class="box horizontal vertical" v-on:click="playerTouchGridBox"></div>
-                <div class="box horizontal" v-on:click="playerTouchGridBox"></div>
+                <row v-for="item in middlerow" v-bind:rowdata="item"></row>
             </div>
             <div class="row">
-                <div class="box" v-on:click="playerTouchGridBox"></div>
-                <div class="box vertical" v-on:click="playerTouchGridBox"></div>
-                <div class="box" v-on:click="playerTouchGridBox"></div>
+                <row v-for="item in siderow" v-bind:rowdata="item"></row>
             </div>
 
         </div>
